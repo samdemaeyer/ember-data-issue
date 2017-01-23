@@ -1,0 +1,30 @@
+{{teacher.name}} <br>
+<strong>Student:</strong>
+{{#each teacher.students as |student|}}
+  {{student.name}}
+{{/each}}
+<br>
+
+Replace the students by filling in the name of the new student: <br>
+<form {{action 'replaceStudent' teacher on='submit'}}>
+  <input type="text" value={{newStudentName}} oninput={{action (mut newStudentName) value='target.value'}} placeholder="Student name">
+  <button type="submit">Replace</button>
+</form>
+<br>
+
+<strong>School:</strong> {{teacher.school.name}}<br>
+Replace the school by filling in the name of the new school: <br>
+<form {{action 'replaceSchool' teacher on='submit'}}>
+  <input type="text" value={{newSchoolName}} oninput={{action (mut newSchoolName) value='target.value'}} placeholder="School name">
+  <button type="submit">Replace</button>
+</form>
+<br>
+
+<strong>Classgroup:</strong> {{teacher.classgroup.name}}<br>
+Replace the school by filling in the name of the new school: <br>
+<form {{action 'replaceClassgroup' teacher on='submit'}}>
+  <input type="text" value={{newClassgroupName}} oninput={{action (mut newClassgroupName) value='target.value'}} placeholder="Classgroup name">
+  <button type="submit">Replace</button>
+</form>
+
+<hr>
